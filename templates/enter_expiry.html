@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form action="/check_expiry" method="post">
+        <label for="expiry_month">Expiry Month:</label>
+        <input type="text" id="expiry_month" name="month" min="1" max="12" maxlength="2" required placeholder="0 or 00">
+        <br><br>
+        <label for="expiry_year">Expiry Year:</label>
+        <input type="text" id="expiry_year" name="year" min="2023" max="2030" minlength="4" maxlength="4"
+               required pattern="[0-9]{4}" placeholder="0000">
+        <br><br>
+        <label for="cvv">CVV:</label>
+        <input type="password" id="cvv" name="cvv" minlength="3" maxlength="3" required pattern="[0-9]{3}" placeholder="xxx">
+        <br><br>
+        <input type="submit" value="Confirm">
+    </form>
+{% endblock %}

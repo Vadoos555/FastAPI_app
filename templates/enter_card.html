@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <form action="/check_card" method="post">
+        <label for="card_number">Card Number:</label>
+        <input type="text" id="card_number" name="card_number" minlength="16" maxlength="16" required pattern="[0-9]{16}"
+        placeholder="Enter card number">
+        <br><br>
+        <input type="submit" value="Confirm">
+    </form>
+{% endblock %}
